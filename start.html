@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Puzzle</title>
+</head>
+<body>
+    <form id="passwordForm">
+        <label for="passwordInput">Enter the password:</label>
+        <input type="password" id="passwordInput" required>
+        <button type="submit">Submit</button>
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+        const form = document.getElementById('passwordForm');
+        const resultDiv = document.getElementById('result');
+        const correctPassword = 'XAN';
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const userPassword = document.getElementById('passwordInput').value;
+            if (userPassword === correctPassword) {
+                resultDiv.textContent = 'Congratulations!';
+            } else {
+                resultDiv.textContent = 'Try again!';
+            }
+        });
+    </script>
+</body>
+</html>
